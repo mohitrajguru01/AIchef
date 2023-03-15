@@ -51,7 +51,7 @@ class CustomFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextField(
               maxLines: maxLines,
               controller: controller,

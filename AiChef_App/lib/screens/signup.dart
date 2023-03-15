@@ -15,12 +15,15 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  bool _passwordVisible=true;
+
   final _userName = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   String get userName => _userName.text.trim();
   String get email => _emailController.text.trim();
+
   String get password => _passwordController.text.trim();
 
   @override
@@ -103,15 +106,25 @@ class _SignUpState extends State<SignUp> {
                       headingText: "Password",
                       preffixIcon: Icon(Icons.lock),
                       hintText: "At least 8 Character",
-                      obsecureText: true,
-                      suffixIcon: IconButton(
-                          icon: const Icon(Icons.visibility), onPressed: () {}),
+                      obsecureText: _passwordVisible,
+                      suffixIcon:  InkWell(
+                        onTap: () {
+                          _passwordVisible = !_passwordVisible;
+                          setState(() {});
+                        },
+                        child: Icon(_passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                      ),
                     ),
                     const SizedBox(
                       height: 16,
                     ),
                     AuthButton(
-                      onTap: () {},
+                      onTap: () {
+                        print(email);
+                        print(userName);
+                      },
                       text: 'Sign Up',
                     ),
                     CustomRichText(
