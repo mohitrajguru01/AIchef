@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:aichef_app/screens/signup.dart';
 import 'package:flutter/material.dart';
 
 import 'login_page.dart';
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage>
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage(),));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp(),));
     });
   }
 

@@ -22,41 +22,50 @@ class LoginPage extends StatelessWidget {
                 height: 190,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(15),
                     //set border radius more than 50% of height and width to make circle
                   ),
 
                   color: Color(0xffe1e2e3),
-                  elevation: 20,
+                  elevation: 15,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
 
-                      TextField(
-                        style:TextStyle(color: Colors.black) ,
-                        decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            label: Text('Email'),
+                      Card(
+                        elevation: 7,
+                        child: TextField(
 
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(21),
-                            )
+                          style:TextStyle(color: Colors.black) ,
+                          decoration: InputDecoration(
+                           prefixIcon: Icon(Icons.email),
+                              filled: true,
+                              fillColor: Colors.white,
+                              label: Text('Email'),
+
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              )
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 11,
                       ),
-                      TextField(
-                        style:TextStyle(color: Colors.black,) ,
+                      Card(
+                        elevation: 7,
+                        child: TextField(
+                          style:TextStyle(color: Colors.black,) ,
 
-                        decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            label: Text('Password'),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(21),
-                            )
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.password_sharp),
+                              filled: true,
+                              fillColor: Colors.white,
+                              label: Text('Password'),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              )
+                          ),
                         ),
                       ),
                       SizedBox(
