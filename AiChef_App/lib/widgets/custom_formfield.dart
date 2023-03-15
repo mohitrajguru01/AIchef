@@ -9,6 +9,7 @@ class CustomFormField extends StatelessWidget {
   final String hintText;
   final bool obsecureText;
   final Widget suffixIcon;
+  final Widget preffixIcon;
   final TextInputType textInputType;
   final TextInputAction textInputAction;
   final TextEditingController controller;
@@ -20,6 +21,7 @@ class CustomFormField extends StatelessWidget {
       required this.hintText,
       required this.obsecureText,
       required this.suffixIcon,
+        required this.preffixIcon,
       required this.textInputType,
       required this.textInputAction,
       required this.controller,
@@ -60,7 +62,9 @@ class CustomFormField extends StatelessWidget {
                   hintText: hintText,
                   hintStyle: KTextStyle.textFieldHintStyle,
                   border: InputBorder.none,
-                  suffixIcon: suffixIcon),
+                  suffixIcon: suffixIcon,
+                  prefixIcon: preffixIcon,
+              ),
             ),
           ),
         )

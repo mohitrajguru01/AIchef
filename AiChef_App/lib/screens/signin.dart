@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../signup.dart';
+import 'package:aichef_app/screens/signup.dart';
 import '../styles/app_colors.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_formfield.dart';
@@ -68,6 +68,7 @@ class _SigninState extends State<Signin> {
                     obsecureText: false,
                     suffixIcon: const SizedBox(),
                     controller: _emailController,
+                    preffixIcon: Icon(Icons.email),
                     maxLines: 1,
                     textInputAction: TextInputAction.done,
                     textInputType: TextInputType.emailAddress,
@@ -80,6 +81,7 @@ class _SigninState extends State<Signin> {
                     maxLines: 1,
                     textInputAction: TextInputAction.done,
                     textInputType: TextInputType.text,
+                    preffixIcon: Icon(Icons.lock),
                     hintText: "At least 8 Character",
                     obsecureText: true,
                     suffixIcon: IconButton(

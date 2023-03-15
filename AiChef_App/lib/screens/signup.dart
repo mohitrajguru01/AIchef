@@ -27,30 +27,30 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Stack(
+          child: SingleChildScrollView(
+            child: Stack(
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            color: AppColors.blue,
-          ),
-          CustomHeader(
-              text: 'Sign Up.',
-              onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const Signin()));
-              }),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.08,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.9,
+            Container(
+              height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                  color: AppColors.whiteshade,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(32),
-                      topRight: Radius.circular(32))),
-              child: SingleChildScrollView(
+              color: AppColors.blue,
+            ),
+            CustomHeader(
+                text: 'Sign Up.',
+                onTap: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const Signin()));
+                }),
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.08,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.9,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                    color: AppColors.whiteshade,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(32),
+                        topRight: Radius.circular(32))),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -64,51 +64,48 @@ class _SignUpState extends State<SignUp> {
                     const SizedBox(
                       height: 16,
                     ),
-                    Card(
-                      elevation: 10,
-                      child: CustomFormField(
+
+                     CustomFormField(
                         headingText: "UserName",
                         hintText: "username",
                         obsecureText: false,
                         suffixIcon: const SizedBox(),
+                        preffixIcon: Icon(Icons.person),
                         maxLines: 1,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.text,
                         controller: _userName,
                       ),
+
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    CustomFormField(
+                      headingText: "Email",
+                      hintText: "Email",
+                      preffixIcon: Icon(Icons.email),
+                      obsecureText: false,
+                      suffixIcon: const SizedBox(),
+
+                      maxLines: 1,
+                      textInputAction: TextInputAction.done,
+                      textInputType: TextInputType.emailAddress,
+                      controller: _emailController,
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                    Card(
-                      elevation: 10,
-                      child: CustomFormField(
-                        headingText: "Email",
-                        hintText: "Email",
-                        obsecureText: false,
-                        suffixIcon: const SizedBox(),
-                        maxLines: 1,
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.emailAddress,
-                        controller: _emailController,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Card(
-                      elevation: 10,
-                      child: CustomFormField(
-                        maxLines: 1,
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.text,
-                        controller: _passwordController,
-                        headingText: "Password",
-                        hintText: "At least 8 Character",
-                        obsecureText: true,
-                        suffixIcon: IconButton(
-                            icon: const Icon(Icons.visibility), onPressed: () {}),
-                      ),
+                    CustomFormField(
+                      maxLines: 1,
+                      textInputAction: TextInputAction.done,
+                      textInputType: TextInputType.text,
+                      controller: _passwordController,
+                      headingText: "Password",
+                      preffixIcon: Icon(Icons.lock),
+                      hintText: "At least 8 Character",
+                      obsecureText: true,
+                      suffixIcon: IconButton(
+                          icon: const Icon(Icons.visibility), onPressed: () {}),
                     ),
                     const SizedBox(
                       height: 16,
@@ -131,9 +128,9 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-          ),
         ],
-      )),
+      ),
+          )),
     );
   }
 }
