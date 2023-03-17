@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../styles/app_colors.dart';
 import '../styles/text_styles.dart';
 
-class AuthButton extends StatelessWidget {
+class AuthButton extends StatefulWidget {
   final String text;
   final Function() onTap;
 
@@ -11,19 +11,26 @@ class AuthButton extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<AuthButton> createState() => _AuthButtonState();
+}
+
+class _AuthButtonState extends State<AuthButton> {
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
+
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 0.05,
         margin: const EdgeInsets.only(left: 20, right: 20),
-        decoration: const BoxDecoration(
-            color: AppColors.blue,
+        decoration:  BoxDecoration(
+            color: Colors.teal.withOpacity(0.7),
+
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Center(
           child: Text(
-            text,
+            widget.text,
             style: KTextStyle.authButtonTextStyle,
           ),
         ),

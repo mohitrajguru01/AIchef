@@ -49,8 +49,8 @@ class _SignUpState extends State<SignUp> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.9,
                 width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                    color: AppColors.whiteshade,
+                decoration:  BoxDecoration(
+                    color: AppColors.whiteshade.withOpacity(0.5),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(32),
                         topRight: Radius.circular(32))),
@@ -113,8 +113,8 @@ class _SignUpState extends State<SignUp> {
                           setState(() {});
                         },
                         child: Icon(_passwordVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                            ? Icons.visibility_off
+                            : Icons.visibility),
                       ),
                     ),
                     const SizedBox(

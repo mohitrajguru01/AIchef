@@ -28,13 +28,20 @@ class _SigninState extends State<Signin> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+
           child: SingleChildScrollView(
+
         child: Stack(
           children: [
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: AppColors.blue,
+              child: Image.asset(
+         'assets/images/bg.jpeg',
+          fit: BoxFit.fill, // I thought this would fill up my Container but it doesn't
+        ),
+              //color: AppColors.blue,
+
             ),
             CustomHeader(
               text: 'Log In.',
@@ -46,10 +53,13 @@ class _SigninState extends State<Signin> {
             Positioned(
               top: MediaQuery.of(context).size.height * 0.08,
               child: Container(
+
                 height: MediaQuery.of(context).size.height * 0.9,
                 width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                    color: AppColors.whiteshade,
+
+                decoration:  BoxDecoration(
+                    color: AppColors.whiteshade.withOpacity(0.6),
+
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40))),
@@ -61,7 +71,7 @@ class _SigninState extends State<Signin> {
                       width: MediaQuery.of(context).size.width * 0.8,
                       margin: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width * 0.09),
-                      child: Image.asset("assets/images/login.png"),
+                      child: Image.asset("assets/images/register.png"),
                     ),
                     const SizedBox(
                       height: 24,
@@ -96,8 +106,8 @@ class _SigninState extends State<Signin> {
                           setState(() {});
                         },
                         child: Icon(_passwordVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                            ? Icons.visibility_off
+                            : Icons.visibility),
                       ),
                       controller: _passwordController,
                     ),
@@ -112,7 +122,7 @@ class _SigninState extends State<Signin> {
                             child: Text(
                               "Forgot Password?",
                               style: TextStyle(
-                                  color: AppColors.blue.withOpacity(0.7),
+                                  color: AppColors.yello.withOpacity(0.8),
                                   fontWeight: FontWeight.w500),
                             ),
                           ),

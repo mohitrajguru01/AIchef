@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:aichef_app/screens/signup.dart';
+import 'package:aichef_app/screens/splash.dart';
+import 'package:aichef_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'login_page.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.indigo, textTheme: TextTheme()),
-      home: MyHomePage(),
+      home: Splash(),
     );
   }
 }
@@ -32,13 +34,14 @@ class _MyHomePageState extends State<MyHomePage>
 {
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Timer(Duration(seconds: 2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp(),));
-    });
-  }
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Timer(Duration(seconds: 4),(){
+  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Splash(),));
+  //   });
+  // }
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +49,9 @@ class _MyHomePageState extends State<MyHomePage>
         title: Text('Hero'),
       ),
       body:Container(
-        color: Colors.blue,
+        color: AppColors.blue,
         child: Center(
-          child: Icon(Icons.account_circle,color: Colors.white,size: 34),
+          child: Image.asset('assets/images/robot-chef.png'),
         ),
       ),
     );
