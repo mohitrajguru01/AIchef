@@ -12,7 +12,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
+
 
   // This widget is the root of your application.
   @override
@@ -33,15 +35,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
 {
 
-  @override
+  // @override
   // void initState() {
   //   // TODO: implement initState
   //   super.initState();
   //   Timer(Duration(seconds: 4),(){
-  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Splash(),));
+  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp(),));
   //   });
   // }
-
+  //
 
   Widget build(BuildContext context) {
     return Scaffold(
