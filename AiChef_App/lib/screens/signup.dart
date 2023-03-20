@@ -69,10 +69,10 @@ class _SignUpState extends State<SignUp> {
                     ),
 
                      CustomFormField(
-                        headingText: "UserName",
+                     //   headingText: "UserName",
                         hintText: "username",
                         obsecureText: false,
-                        suffixIcon: const SizedBox(),
+                       // suffixIcon: const SizedBox(),
                         preffixIcon: Icon(Icons.person),
                         maxLines: 1,
                         textInputAction: TextInputAction.done,
@@ -84,11 +84,11 @@ class _SignUpState extends State<SignUp> {
                       height: 16,
                     ),
                     CustomFormField(
-                      headingText: "Email",
+                     // headingText: "Email",
                       hintText: "Email",
                       preffixIcon: Icon(Icons.email),
                       obsecureText: false,
-                      suffixIcon: const SizedBox(),
+                      //suffixIcon: const SizedBox(),
 
                       maxLines: 1,
                       textInputAction: TextInputAction.done,
@@ -103,19 +103,19 @@ class _SignUpState extends State<SignUp> {
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.text,
                       controller: _passwordController,
-                      headingText: "Password",
+                   //   headingText: "Password",
                       preffixIcon: Icon(Icons.lock),
                       hintText: "At least 8 Character",
                       obsecureText: _passwordVisible,
-                      suffixIcon:  InkWell(
-                        onTap: () {
-                          _passwordVisible = !_passwordVisible;
-                          setState(() {});
-                        },
-                        child: Icon(_passwordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                      ),
+                      // suffixIcon:  InkWell(
+                      //   onTap: () {
+                      //     _passwordVisible = !_passwordVisible;
+                      //     setState(() {});
+                      //   },
+                      //   child: Icon(_passwordVisible
+                      //       ? Icons.visibility_off
+                      //       : Icons.visibility),
+                      // ),
                     ),
                     const SizedBox(
                       height: 16,

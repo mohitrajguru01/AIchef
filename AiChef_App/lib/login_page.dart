@@ -111,8 +111,6 @@ class LoginPage extends StatelessWidget {
               TextButton(onPressed: (){
               }, child: Text('Register now',style: TextStyle(fontSize: 17)),
               ),
-
-
             ],
           ),
         ),

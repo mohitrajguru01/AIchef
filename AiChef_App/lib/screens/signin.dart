@@ -77,10 +77,10 @@ class _SigninState extends State<Signin> {
                       height: 24,
                     ),
                     CustomFormField(
-                      headingText: "Email",
+                    //  headingText: "Email",
                       hintText: "Email",
                       obsecureText: false,
-                      suffixIcon: const SizedBox(),
+                     // suffixIcon: const SizedBox(),
                       controller: _emailController,
                       preffixIcon: Icon(Icons.email),
                       maxLines: 1,
@@ -91,7 +91,7 @@ class _SigninState extends State<Signin> {
                       height: 16,
                     ),
                     CustomFormField(
-                      headingText: "Password",
+                     // headingText: "Password",
                       maxLines: 1,
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.text,
@@ -100,15 +100,15 @@ class _SigninState extends State<Signin> {
                       ),
                       hintText: "At least 8 Character",
                       obsecureText: _passwordVisible,
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          _passwordVisible = !_passwordVisible;
-                          setState(() {});
-                        },
-                        child: Icon(_passwordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                      ),
+                      // suffixIcon: InkWell(
+                      //   onTap: () {
+                      //     _passwordVisible = !_passwordVisible;
+                      //     setState(() {});
+                      //   },
+                      //   child: Icon(_passwordVisible
+                      //       ? Icons.visibility_off
+                      //       : Icons.visibility),
+                      // ),
                       controller: _passwordController,
                     ),
                     Row(

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:aichef_app/screens/register.dart';
 import 'package:aichef_app/screens/signup.dart';
 import 'package:aichef_app/screens/splash.dart';
 import 'package:aichef_app/styles/app_colors.dart';
@@ -35,27 +36,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
 {
 
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Timer(Duration(seconds: 4),(){
-  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp(),));
-  //   });
-  // }
-  //
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Register(),));
+
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hero'),
       ),
-      body:Container(
-        color: AppColors.blue,
-        child: Center(
-          child: Image.asset('assets/images/robot-chef.png'),
-        ),
-      ),
+      body: Container(
+           ),
     );
   }
 

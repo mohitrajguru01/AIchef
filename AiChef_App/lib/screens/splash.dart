@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:aichef_app/main.dart';
+import 'package:aichef_app/screens/register.dart';
 import 'package:aichef_app/screens/signin.dart';
+import 'package:aichef_app/widgets/custom_text.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,13 +17,13 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Timer(Duration(seconds: 4),(){
-  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyHomePage(),));
-  //   });
-  // }
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 3),(){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Register(),));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +44,13 @@ class _SplashState extends State<Splash> {
               alignment: Alignment(0,0.1),
 
 
-                 child: Text(
-                    "Trusted by thousands of women's in india",textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Work Sans',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xffbac939393),
-                    ),
-
-
-                  ),
+                 child: CustomText(
+                   text:"Trusted by thousands of women's in india" ,
+                   fontFamily: 'Work Sans',
+                   fontSize: 18,
+                   fontWeight: FontWeight.w500,
+                   textColor: 0xffbac939393,
+                 ),
 
             ),
                   Positioned(
@@ -83,12 +81,12 @@ class _SplashState extends State<Splash> {
                               color: Color(0xff000000),
                             ),
                             ),
-                            // WidgetSpan(
-                            //   child: Padding(
-                            //     padding: EdgeInsets.symmetric(horizontal: 2.0),
-                            //     child: Icon(Icons.flag,color: Colors.red,size: 18,),
-                            //   ),
-                            // ),
+                            WidgetSpan(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 2.0),
+                                child:   Image(image: AssetImage('assets/images/flag_indian.png',),height: 16,width: 16,),
+                              ),
+                            ),
 
                           ],
                         ),

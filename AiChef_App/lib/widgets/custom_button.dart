@@ -25,7 +25,7 @@ class _AuthButtonState extends State<AuthButton> {
         height: MediaQuery.of(context).size.height * 0.05,
         margin: const EdgeInsets.only(left: 20, right: 20),
         decoration:  BoxDecoration(
-            color: Colors.teal.withOpacity(0.7),
+            color: Color(0xffE9A200),
 
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Center(
