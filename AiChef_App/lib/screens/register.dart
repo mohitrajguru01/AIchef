@@ -1,5 +1,4 @@
 import 'package:aichef_app/screens/otp_code.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,6 @@ class Register extends StatelessWidget {
   String get name => _nameController.text.trim();
 
   int get mobile => int.parse(_phoneController.text.trim());
-  var code='+91';
 
   @override
   Widget build(BuildContext context) {
@@ -119,18 +117,11 @@ class Register extends StatelessWidget {
                       height: 91,
                     ),
                     AuthButton(
-                      onTap: () async{
-                        await FirebaseAuth.instance.verifyPhoneNumber(
-                          phoneNumber: '+91${mobile}',
-                          verificationCompleted: (PhoneAuthCredential credential) {},
-                          verificationFailed: (FirebaseAuthException e) {},
-                          codeSent: (String verificationId, int? resendToken) {
-                            Navigator.push(context,MaterialPageRoute(builder: (context) =>  Otp_Login(Number:mobile,verify:verificationId)),);
-                          },
-                          codeAutoRetrievalTimeout: (String verificationId) {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  Otp_Login(Number:mobile)),
                         );
-
-                       // Navigator.push(context,MaterialPageRoute(builder: (context) =>  Otp_Login(Number:mobile)),);
                       },
                       text: 'START',
                     ),

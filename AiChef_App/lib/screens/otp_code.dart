@@ -1,23 +1,18 @@
-import 'package:aichef_app/screens/home.dart';
 import 'package:aichef_app/widgets/custom_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 import '../widgets/custom_text.dart';
 class Otp_Login extends StatelessWidget {
   final int Number;
-  final String verify;
   Otp_Login(
      {
-       required  this.Number,required this.verify}
+       required  this.Number}
      );
 
-  FirebaseAuth auth = FirebaseAuth.instance;
-  var code="";
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       // appBar: AppBar(
       //   title: Text(''),
@@ -88,9 +83,7 @@ class Otp_Login extends StatelessWidget {
                       textFieldAlignment: MainAxisAlignment.spaceAround,
                       fieldStyle: FieldStyle.underline,
                       onCompleted: (pin) {
-                        code=pin;
                         print("Completed: " + pin);
-                        print('PINNNNNNNNNNN'+pin);
                       },
                     ),
                   ),
@@ -123,21 +116,7 @@ class Otp_Login extends StatelessWidget {
                   ),SizedBox(
                     height: 55,
                   ),
-                  AuthButton(onTap: () async{
-                    print('CODDDDDDDD'+code);
-                    print('IDDDDDDDDDDDDD=============>>>>>'+verify);
-                                try {
-                                  PhoneAuthCredential credential = PhoneAuthProvider
-                                      .credential(
-                                      verificationId: verify, smsCode: code);
-                                  // Sign the user in (or link) with the credential
-                                  await auth.signInWithCredential(credential);
-                                  Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) => HomeScreen()),);
-                                }catch(e){
-                                  print('Enter valid otp');
-                                }
-
+                  AuthButton(onTap: (){
 
                   }, text: 'START'),
                   SizedBox(
