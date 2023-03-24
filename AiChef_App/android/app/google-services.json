@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1069939839834",
+    "project_id": "aichef-ede46",
+    "storage_bucket": "aichef-ede46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069939839834:android:b758815c44bad761b9d963",
+        "android_client_info": {
+          "package_name": "com.example.aichef_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069939839834-cdpojgi16du27o6ikcorvpd7jd1ltr1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8AZZ92JDBjEIQqB3ENJnmMDGSjS3wLus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069939839834-cdpojgi16du27o6ikcorvpd7jd1ltr1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

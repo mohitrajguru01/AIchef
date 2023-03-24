@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aichef_app">
+
    <application
         android:label="aichef_app"
         android:name="${applicationName}"
